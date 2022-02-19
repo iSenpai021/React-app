@@ -1,5 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require('dotenv').config();
+let secret = require ("./secret")
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -29,6 +30,10 @@ module.exports = {
     ropsten: {
       url: "https://ropsten.infura.io/v3/92c88218afc04be4bdbfad1a3ecd8688",
       accounts: ['6814dcf67af900ed2f09fb73dedb3790a2a90b2dfd3270784e60f0294dd780de']
+    },
+    moralis: {
+      url: secret.url,
+      accounts: [secret.key]
     }
   }
 };
